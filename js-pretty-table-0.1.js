@@ -20,8 +20,9 @@
 			for (var column = 0 ; column < headers.length ; column++) {
 				if ($(headers[column]).hasClass("filter_me")) {
 					var div = prettyTable.createDiv(column, bodyRows);
+					$(headers[column]).data('menu', $(div));
 					$(headers[column]).click(function () {
-						$(div).slideToggle();
+						$(this).data('menu').slideToggle();
 					});
 				}
 			}
