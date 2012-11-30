@@ -6,11 +6,13 @@
 <script type="text/JavaScript" src="libs/jquery-1.8.2.js"></script>
 <script type="text/JavaScript" src="libs/jquery-ui-1.9.1.js"></script>
 <script type="text/JavaScript" src="libs/collapsible-panel-0.1.js"></script>
+<script type="text/JavaScript" src="js-pretty-table-0.1.js"></script>
 <link rel="stylesheet" href="libs/jquery-ui-1.9.1.css" type="text/css"
 	media="screen" charset="UTF-8" />
 <script language="javascript" type="text/javascript">
 	$(document).ready(function() {
 		$(".collapsible").collapsiblePanel();
+		$(".prettyTable").prettyTable();
 	});
 </script>
 
@@ -18,11 +20,159 @@
 <body>
 	<h1>Test Page</h1>
 	<div class="collapsible" title="First collapsible panel" state="open">
-		<p>This is a collapsible panel.</p>
+		<table>
+			<thead>
+				<tr>
+					<th>Continente</th>
+					<th>Cidade</th>
+					<th>Idioma</th>
+					<th>Popula&ccedil;&atilde;o</th>
+				</tr>
+				<tr>
+					<td>America</td>
+					<td>Muriqui</td>
+					<td>Portugues</td>
+					<td>16</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+				
+	<td>Oceania</td>
+					<td>Sidney</td>
+					<td>Ingles</td>
+					<td>500</td>
+				</tr>
+				<tr>
+					<td>Europa</td>
+					<td>Londres</td>
+					<td>Ingles</td>
+					<td>400</td>
+				</tr>
+				<tr>
+					<td>Europa</td>
+					<td>Barcelona</td>
+					<td>Espanhol</td>
+				
+	<td>318</td>
+				</tr>
+				<tr>
+					<td>America</td>
+					<td>Boston</td>
+					<td>Ingles</td>
+					<td>231</td>
+				</tr>
+				<tr>
+					<td>America</td>
+					<td>Miami</td>
+					<td>Espanhol</td>
+					<td>724</td>
+				</tr>
+				<tr>
+					<td>Africa</td>
+					<td>Cidade do Cabo</td>
+					<td>Ingles</td>
+					<td>423</td>
+				</tr>
+				<tr>
+					<td>Africa</td>
+					<td>Abuja</td>
+					<td>Portugues</td>
+					<td>429</td>
+				</tr>
+				<tr>
+					<td>America</td>
+					<td>Rio de Janeiro</td>
+					<td>Portugues</td>
+					<td>180</td>
+				</tr>
+				<tr>
+					<td>Europa</td>
+				
+	<td>Portugal</td>
+					<td>Portugues</td>
+					<td>270</td>
+				</tr>
+			</tbody>
+		</table>
 	</div>
 	<div class="collapsible" title="Second collapsible panel">
-		<p>This is another collapsible panel.</p>
+		<table>
+			<thead>
+				<tr>
+					<th>Continente</th>
+					<th>Cidade</th>
+					<th>Idioma</th>
+					<th>Popula&ccedil;&atilde;o</th>
+				</tr>
+				<tr>
+					<td>America</td>
+					<td>Muriqui</td>
+					<td>Portugues</td>
+					<td>51</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Oceania</td>
+					<td>Sidney</td>
+					<td>Ingles</td>
+					<td>230</td>
+				</tr>
+				<tr>
+					<td>Europa</td>
+					<td>Londres</td>
+					<td>Ingles</td>
+					<td>320</td>
+				</tr>
+				<tr>
+					<td>Europa</td>
+					<td>Barcelona</td>
+					<td>Espanhol</td>
+					<td>868</td>
+				</tr>
+				<tr>
+					<td>America</td>
+					<td>Boston</td>
+					<td>Ingles</td>
+					<td>146</td>
+				</tr>
+				<tr>
+					<td>America</td>
+					<td>Miami</td>
+					<td>Espanhol</td>
+					<td>623</td>
+				</tr>
+				<tr>
+					<td>Africa</td>
+					<td>Cidade do Cabo</td>
+				
+	<td>Ingles</td>
+					<td>573</td>
+				</tr>
+				<tr>
+					<td>Africa</td>
+					<td>Abuja</td>
+					<td>Portugues</td>
+					<td>536</td>
+				</tr>
+				<tr>
+					<td>America</td>
+					<td>Rio de Janeiro</td>
+					<td>Portugues</td>
+					<td>797</td>
+				</tr>
+				<tr>
+					<td>Europa</td>
+					<td>Portugal</td>
+					<td>Portugues</td>
+					<td>546</td>
+				</tr>
+			</tbody>
+		</table>
 	</div>
 </body>
 </html>
+
+
 
