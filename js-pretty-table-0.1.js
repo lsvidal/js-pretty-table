@@ -1,8 +1,18 @@
 (function ($) {
+
+	var prettyTable = {
+		init : function(tables) {
+			console.log("init called");
+			tables.each(function (table) {
+				table.addClass("juju");
+			});
+		}
+	};
 	$.fn.extend({
 		prettyTable : function () {
-			$(this).each(function () {
-			});
+			console.log("pretty table called");
+			alert("pretty table called");
+			prettyTable.init(this);
 		}
 	});
 })(JQuery);

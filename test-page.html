@@ -11,6 +11,7 @@
 	media="screen" charset="UTF-8" />
 <script language="javascript" type="text/javascript">
 	$(document).ready(function() {
+		alert("hi");
 		$(".collapsible").collapsiblePanel();
 		$(".prettyTable").prettyTable();
 	});
@@ -20,12 +21,12 @@
 <body>
 	<h1>Test Page</h1>
 	<div class="collapsible" title="First collapsible panel" state="open">
-		<table>
+		<table class="prettyTable">			
 			<thead>
 				<tr>
-					<th>Continente</th>
+					<th class="filter_me sort_me">Continente</th>
 					<th>Cidade</th>
-					<th>Idioma</th>
+					<th class="filter_me sort_me">Idioma</th>
 					<th>Popula&ccedil;&atilde;o</th>
 				</tr>
 				<tr>
@@ -37,8 +38,7 @@
 			</thead>
 			<tbody>
 				<tr>
-				
-	<td>Oceania</td>
+					<td>Oceania</td>
 					<td>Sidney</td>
 					<td>Ingles</td>
 					<td>500</td>
@@ -53,8 +53,7 @@
 					<td>Europa</td>
 					<td>Barcelona</td>
 					<td>Espanhol</td>
-				
-	<td>318</td>
+					<td>318</td>
 				</tr>
 				<tr>
 					<td>America</td>
@@ -88,8 +87,7 @@
 				</tr>
 				<tr>
 					<td>Europa</td>
-				
-	<td>Portugal</td>
+					<td>Portugal</td>
 					<td>Portugues</td>
 					<td>270</td>
 				</tr>
@@ -146,8 +144,7 @@
 				<tr>
 					<td>Africa</td>
 					<td>Cidade do Cabo</td>
-				
-	<td>Ingles</td>
+					<td>Ingles</td>
 					<td>573</td>
 				</tr>
 				<tr>
