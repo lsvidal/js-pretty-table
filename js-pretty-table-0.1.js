@@ -10,9 +10,8 @@
 	};
 	$.fn.extend({
 		prettyTable : function () {
-			console.log("pretty table called");
-			alert("pretty table called");
+			console.log("pretty table called");			
 			prettyTable.init(this);
 		}
 	});
-})(JQuery);
+})(jQuery);
