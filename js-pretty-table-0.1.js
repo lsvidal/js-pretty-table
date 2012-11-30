@@ -20,6 +20,9 @@
 			for (var column = 0 ; column < headers.length ; column++) {
 				if ($(headers[column]).hasClass("filter_me")) {
 					var div = prettyTable.createDiv(column, bodyRows);
+					$(headers[column]).click(function () {
+						$(div).slideToggle();
+					});
 				}
 			}
 		},
@@ -42,7 +45,12 @@
 			}
 			var div = document.createElement('div');
 			$(div).append(list);
+			$(div).slideUp();
+			$(div).mouseout(function () {
+				$(this).slideUp();
+			});
 			$("body").append(div);
+			return div;
 		},
 		insertArrayNoReps : function(array, val) {
 			for (var i = 0 ; i < array.length ; i++) {
