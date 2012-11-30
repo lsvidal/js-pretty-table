@@ -1,0 +1,1 @@
+This is a table with filtering and sorting capabilities inspired by MS Excel.
