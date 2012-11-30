@@ -22,7 +22,10 @@
 					var div = prettyTable.createDiv(column, bodyRows);
 					$(headers[column]).data('menu', $(div));
 					$(headers[column]).click(function () {
-						$(this).data('menu').slideToggle();
+						var div = $(this).data('menu');
+						var pos = $(this).offset();
+						div.offset({ top: pos.top + 20 , left : pos.left});
+						div.slideToggle();
 					});
 				}
 			}
