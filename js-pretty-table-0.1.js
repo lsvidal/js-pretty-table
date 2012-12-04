@@ -19,18 +19,11 @@
 			console.log(headers.length);
 			for (var column = 0 ; column < headers.length ; column++) {
 				if ($(headers[column]).hasClass("filter_me")) {
-					var div = prettyTable.createDiv(column, bodyRows);
-					$(headers[column]).data('menu', $(div));
-					$(headers[column]).click(function () {
-						var div = $(this).data('menu');
-						var pos = $(this).offset();
-						div.offset({ top: pos.top + 20 , left : pos.left});
-						div.slideToggle();
-					});
+					var div = prettyTable.createDiv(column, bodyRows, $(headers[column]));
 				}
 			}
 		},
-		createDiv : function(column, bodyRows) {
+		createDiv : function(column, bodyRows, header) {
 			console.log("coluna " + column);
 			var itens = new Array();
 			for (var row = 0 ; row < bodyRows.length ; row++) {
@@ -49,11 +42,21 @@
 			}
 			var div = document.createElement('div');
 			$(div).append(list);
-			$(div).slideUp();
+			 $(div).css(
+				{ position: "absolute",
+					top: header.offset().top + "px",
+					left: header.offset().left + "px"
+				}).hide();  
 			$(div).mouseout(function () {
 				$(this).slideUp();
 			});
-			$("body").append(div);
+			header.append(div);
+			header.data('menu', $(div));
+			header.click(function () {
+				var div = $(this).data('menu');
+				var pos = $(this).offset();
+				div.slideToggle();
+			});
 			return div;
 		},
 		insertArrayNoReps : function(array, val) {
