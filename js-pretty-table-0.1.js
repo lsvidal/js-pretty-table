@@ -14,9 +14,13 @@
 			console.log("A tabela tem " + table.rows.length + " linhas");
 			console.log("A tabela tem " + table.tBodies.length + " corpo");
 			console.log("O corpo tem " + table.tBodies[0].rows.length + " linhas");
+			if (table.tFoot) {
+				console.log("O rodapé tem " + table.tFoot.rows.length + " linhas");
+			} else {
+				console.log("A tabela não tem rodapé");
+			}
 			var bodyRows = table.tBodies[0].rows;
-			var headers = $("th", table);
-			console.log(headers.length);
+			var headers = table.tHead.rows[0].cells;			
 			for (var column = 0 ; column < headers.length ; column++) {
 				if ($(headers[column]).hasClass("filter_me")) {
 					var div = prettyTable.createDiv(column, bodyRows, $(headers[column]));
@@ -33,11 +37,9 @@
 			var list = document.createElement('ul');
 			var li = document.createElement('li');
 			$(li).html('Todos');
-			$(list).append(li);
+			$(list).append(prettyTable.createLi('Todos'));
 			for (var i = 0 ; i < itens.length ; i++) {
-				var li = document.createElement('li');
-				$(li).html(itens[i]);
-				$(list).append(li);
+				$(list).append(prettyTable.createLi(itens[i]));
 				console.log(itens[i]);
 			}
 			var div = document.createElement('div');
@@ -47,14 +49,14 @@
 					top: header.offset().top + "px",
 					left: header.offset().left + "px"
 				}).hide();  
-			$(div).mouseout(function () {
+			$(div).mouseleave(function () {
 				$(this).slideUp();
 			});
 			header.append(div);
 			header.data('menu', $(div));
 			header.click(function () {
 				var div = $(this).data('menu');
-				var pos = $(this).offset();
+				//var pos = $(this).offset();
 				div.slideToggle();
 			});
 			return div;
@@ -66,6 +68,15 @@
 				}
 			}
 			array[array.length] = val;
+		},
+		createLi : function(item) {
+			var li = document.createElement('li');
+			$(li).html(item);
+			$(li).click(function (event) {
+				console.log("Clique em :" + $(this).html());
+				event.stopPropagation();
+			});
+			return li;
 		}
 	};
 	$.fn.extend({
