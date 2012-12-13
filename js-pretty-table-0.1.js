@@ -59,18 +59,18 @@
 	
 	var createLi = function(item, table) {
 		console.log(table);
-		$(this).data('tabela', table);
 		var li = document.createElement('li');
-		$(li).html(item);		
+		$(li).html(item);
+		$(li).data('table', table);		
 		$(li).click(function (event) {
 			console.log("Clique em :" + $(this).html());
-			atualizarTabela($(this).data('tabela'));
+			atualizarTabela($(this).data('table'));
 			event.stopPropagation();
 		});
 		return li;
 	};
-	var atualizarTabela = function(tabela) {
-		console.log(tabela);
+	var atualizarTabela = function(table) {
+		console.log(table);
 	};
 	
 	/*
